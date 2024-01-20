@@ -11,27 +11,30 @@
 # Desarrolle un programa que solucione el problema de Solarrabietas:
 import math
 
-ja = int(input("Juegos ganados por A: "))
-jb = int(input("Juegos ganados por B: "))
-if((0 <= ja <= 7) and (0 <= jb <= 7)):
-    if(ja <= 5 and jb <= 5):
-        print("Aún no termina")
-    elif(ja == 7 or jb == 7):
-        if(ja == 7 and 5 <= jb <= 6):
-            print("Ganó A")
-        elif(jb == 7 and 5 <= ja <= 6):
-            print("Ganó B")
-        else:
-            print("Inválido")
-    elif(ja == 6 or jb == 6):
-        if(abs(ja - jb) >= 2):
-            if(ja > jb):
-                print("Ganó A")
-            else:
-                print("Ganó B")
-        elif(abs(ja - jb) == 1):
+try:
+    ja = int(input("Juegos ganados por A: "))
+    jb = int(input("Juegos ganados por B: "))
+    if((0 <= ja <= 7) and (0 <= jb <= 7)):
+        if(ja <= 5 and jb <= 5):
             print("Aún no termina")
-        else:
-            print("Inválido")
-else:
-    print("Inválido")
+        elif(ja == 7 or jb == 7):
+            if(ja == 7 and 5 <= jb <= 6):
+                print("Ganó A")
+            elif(jb == 7 and 5 <= ja <= 6):
+                print("Ganó B")
+            else:
+                print("Inválido")
+        elif(ja == 6 or jb == 6):
+            if(abs(ja - jb) >= 2):
+                if(ja > jb):
+                    print("Ganó A")
+                else:
+                    print("Ganó B")
+            elif(abs(ja - jb) == 1):
+                print("Aún no termina")
+            else:
+                print("Inválido")
+    else:
+        print("Inválido")
+except ValueError:
+    print("No es un número válido")

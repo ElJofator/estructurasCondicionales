@@ -4,15 +4,19 @@
 
 #   si acaso el triángulo es inválido; y
 #   si no lo es, qué tipo de triángulo es.
-a = float(input("Ingrese a: "))
-b = float(input("Ingrese b: "))
-c = float(input("Ingrese c: "))
-if((a + b) > c and (a + c) > b and (b + c) > a):
-    if(a == b == c):
-        print("El triángulo es equilátero.")
-    elif(a == b or a == c or b == c):
-        print("El triángulo es isoceles.")
+
+try:
+    a = float(input("Ingrese a: "))
+    b = float(input("Ingrese b: "))
+    c = float(input("Ingrese c: "))
+    if((a + b) > c and (a + c) > b and (b + c) > a):
+        if(a == b == c):
+            print("El triángulo es equilátero.")
+        elif(a == b or a == c or b == c):
+            print("El triángulo es isoceles.")
+        else:
+            print("El triángulo es escaleno.")
     else:
-        print("El triángulo es escaleno.")
-else:
-    print("No es un triángulo válido.")
+        print("No es un triángulo válido.")
+except ValueError:
+    print("No es un número válido")
